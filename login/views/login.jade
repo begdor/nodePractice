@@ -1,0 +1,14 @@
+html
+  head
+    title= title
+  body
+    h1= message
+    form(method="post",action="/login")
+      div.input
+        span Username
+        input(type="text",name='user',id='user')
+      div.input
+        span Password
+        input(type="password",name='password',id='password')
+      div.action
+        input(type="submit", value='Submit')

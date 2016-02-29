@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+ head
+  title Login  
+  script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+  script(src='http://code.jquery.com/jquery-1.12.0.min.js')
+  script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
+  style
+    include style.css
+  script
+    include function.js
+
+ body
+  div.loginform
+   form(method="post" id='loginform' action="/login")
+    input(type="text" name="user" id="user" placeholder="Enter Username")
+    input(type="password" name="password" id ="password" placeholder="Enter Password")
+    input(type="submit" class="btn btn-primary btn-block btn-large"   value="submit")

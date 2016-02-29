@@ -1,0 +1,36 @@
+'use strict'
+
+var User = require('./../models/User');
+var mongoose = require('mongoose');
+var chai = require('chai');
+var expect = chai.expect;
+
+describe('User', function () {
+	it('should be an instance of mongoose Model', function () {
+		expect(User).to.be.an.instanceOf(mongoose.Model);
+	});
+	describe('.getByUsername(username)', function () {
+		before(function (done) {
+			// create a fake, and assign it to `this.user`
+		})
+		it('should be a function', function () {
+			expect(User.getByUsername).to.be.a('function');
+		});
+		it('resolve user if found', function (done) {
+			var self = this;
+			User.getByUsername(this.user.username)
+			.then(function (user) {
+				expect(user).to.exist;
+				expect(user.username).to.equal(self.user.username);
+			})
+			.should.notify(done);
+		});
+		it('resolve null if not found', function (done) {
+			User.getByUsername('someusername')
+			.then(function (user) {
+				expect(user).to.equal(null);
+			})
+			.should.notify(done);
+		})
+	})
+})
