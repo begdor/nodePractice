@@ -43,7 +43,7 @@ describe('.getByUsername(username)', function () {
 	//Working with Promise & using chaiAsPromised
 	/*
 	*  MARK: the test is passed but the console.log is not displayed;
-	*  don't run the callback function in then at all.
+	*  didn't call the callback function in then() at all.
 	*/
 	it('resolve user if found/chaiAsPromised', function (done) {
 		var self = this;
@@ -62,7 +62,7 @@ describe('.getByUsername(username)', function () {
 		promise.should.eventually.equal(self.user);
 		
 		---
-		
+
 		var promise = User.getByUsername(this.user.username);
 		return promise.then(function(user){
 			console.log('in then');
