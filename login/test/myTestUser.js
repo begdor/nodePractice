@@ -4,7 +4,7 @@ var User = require('./../models/User');
 var mongoose = require('mongoose');
 var chai = require("chai");
 var expect = require('chai').expect;
-chai.should();
+var should = chai.should();
 var chaiAsPromised = require("chai-as-promised");
 
 chai.use(chaiAsPromised);
@@ -32,7 +32,6 @@ describe('.getByUsername(username)', function () {
 		var promise = User.getByUsername(this.user.username);
 
 		promise.then(function(user){
-			console.log('Inside then');
 			expect(user).to.equal('likun');
 			expect(user).to.exist;
 			expect(user.username).to.equal(self.user.username);	
@@ -50,7 +49,6 @@ describe('.getByUsername(username)', function () {
 		var promise = User.getByUsername(this.user.username);
 
 		promise.should.eventually.exist.then(function(user){
-			console.log('chaiAsPromised');
 			expect(user.username).to.equal(self.user.username);		
 		}); //same as then(){expect(user).to.exist}
 		done();
